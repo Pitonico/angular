@@ -1,0 +1,26 @@
+<!-- Component <-> Template -->
+<!-- Property Binding + Event Binding-->
+<!-- Property BInding: [ngModel] é a representação de um entidade, podendo ser desde uma string até mesmo um objeto -->
+<!-- Event Binding: (ngModelChange) é um evento do ngModel semelhante ao evento (input) -->
+<!-- Two-Way-Data-Binding: [(ngModel)] = [ngModel] + (ngModelChange) -->
+
+<section class="two-way-data-binding">
+  <article>
+    <h3>Two-wat data binding</h3>
+    <div>
+
+      <input #tag type="text" [value]="nome" (input)="nome = tag.value"/>
+      <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" />
+      <input type="text" bindon-ngModel = "nome"/>
+      <input type="text" [(ngModel)] = "nome"/>
+
+      <p>Você digitou: {{ nome }}</p>
+
+    </div>
+    <div>
+      <input type="text" [(ngModel)] = "pessoa.nome" />
+      <input type="text" [(ngModel)] = "pessoa.idade" />
+      <p>Nome: {{ pessoa.nome }} | Idade: {{ pessoa.idade }}</p>
+    </div>
+  </article>
+</section>

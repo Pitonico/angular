@@ -1,0 +1,39 @@
+<!-- É um tipo de Property Binding: Component -> Template -->
+<!-- Classe Binding: Adiciona uma CSS class name a um elemento quando a expressão é verdade, e remove quando é falsa-->
+<!-- Style Binding: Adiciona uma CSS propriedade a um elemento e seta de acordo com uma expressão -->
+<!-- #classe: Faz referência ao elemento select -->
+<article>
+  <h3> Class e Style Binding</h3>
+  <div>
+    Selecione uma classe:
+    <select #classe (change)="0">
+      <option value="alert-success">Sucesso</option>
+      <option value="alert-info">Info</option>
+      <option value="alert-warning">Alerta</option>
+      <option value="alert-danger">Erro</option>
+    </select>
+  </div>
+  <br>
+  <!-- Class Binding -->
+  <div class="alert {{ classe.value }}" role="alert">
+    Texto colorido conforme valor do combobox
+  </div>
+  <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
+    Successo
+  </div>
+  <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">
+    Info
+  </div>
+  <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+    Alerta
+  </div>
+  <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+    Erro
+  </div>
+  <!-- Style Binding-->
+  <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+    Esse texto somente aparece em caso de error.
+  </div>
+
+
+</article>

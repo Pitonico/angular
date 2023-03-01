@@ -1,0 +1,20 @@
+<!-- Interpolation: Component -> Template -->
+<!-- Property Binding: Defini valores para propriedades de elementos ou diretivas HTML
+        Component -> Template -->
+<!-- Caso não exista um propriedade em um elemento, utiliza-se o [attr.propriedade] -->
+
+<section>
+  <article>
+    <h3>Interpolation / Interpolação</h3>
+    <p> String renderizada com interpolação: {{ url }}</p>
+    <p> Resultado de 1 + 1 = {{ 1 + 1 }}</p>
+    <p> Resultado de 2 + 2 = {{ 1 + 1 + getValor() }} </p>
+    <p> Curso de Angular? {{ cursoAngular && getCurtirCurso() }}</p>
+  </article>
+
+  <article>
+    <img src="{{ urlImagem }}" alt="" >
+    <img bind-src="urlImagem" alt="">
+    <img [src]="urlImagem" alt="">
+  </article>
+</section>
