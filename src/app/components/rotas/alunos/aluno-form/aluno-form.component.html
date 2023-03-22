@@ -1,0 +1,14 @@
+<form action="">
+  <mat-form-field>
+    <mat-label>Id</mat-label>
+    <input disabled matInput [value]="aluno.id">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput [value]="aluno.nome" (input)="onInput()">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [value]="aluno.email">
+  </mat-form-field>
+</form>

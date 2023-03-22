@@ -1,0 +1,39 @@
+<h1>*ngSwitch, *ngSwitchCase, *ngSwitchDefault </h1>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="aba == 'home'" (click)="aba = 'home'" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="aba == 'mapa'" (click)="aba = 'mapa'" href="#">Mapa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="aba == 'lista'" (click)="aba = 'lista'" href="#">Lista</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" [ngSwitch]="aba">
+  <p *ngSwitchCase="'mapa'">Modo Mapa Ativado</p>
+  <p *ngSwitchCase="'lista'">Modo Lista Ativado</p>
+  <p *ngSwitchDefault>HOME</p>
+</div>
+
+<h5>Removendo * e utilizando o template</h5>
+
+<div class="container" [ngSwitch]="aba">
+  <ng-template [ngSwitchCase]="'mapa'">
+    <p>Modo Mapa Ativado</p>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'lista'">
+    <p>Modo Lista Ativado</p>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'home'" ngSwitchDefault>
+    <p>HOME</p>
+  </ng-template>
+</div>

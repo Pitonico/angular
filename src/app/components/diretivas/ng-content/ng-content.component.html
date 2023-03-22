@@ -1,0 +1,19 @@
+<p>ng-content works!</p>
+<p>Conteúdo passado atráves do component que esta chamando (pai), assim como o @Input</p>
+<!-- <app-ng-content>Conteúdo passado para o Componente</app-ng-content> -->
+<div >
+  <div>
+    <ng-content select=".titulo"></ng-content>
+  </div>
+  <div>
+    <ng-content select=".corpo"></ng-content>
+  </div>
+</div>
+
+<!-- No Componente Pai -->
+<!-- <app-ng-content>Conteúdo passado para o Componente</app-ng-content> -->
+<!-- <app-ng-content>
+    <div class="titulo">Titulo do Painel</div>
+    <div class="corpo">Corpo do Body</div>
+    <div class="corpo">Corpo do Body 2</div>
+</app-ng-content> -->

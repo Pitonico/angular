@@ -1,0 +1,20 @@
+<h3>ngClass</h3>
+<h1>
+  <!-- Class Binding (Property Binding): Melhor utilizar quando tem apenas uma class -->
+  <i class="bi"
+    [class.bi-star]="meuFavorito"
+    [class.bi-star-fill]="!meuFavorito"
+    (click)="onClick()">
+  </i>
+  <!-- ngClass: Melhor utilizar quando tem mais de um class, pois fica mais legível -->
+  <i class="bi"
+    [ngClass]="{
+      'bi-star': meuFavorito,
+      'bi-star-fill': !meuFavorito
+    }"
+    (click)="onClick()">
+  </i>
+</h1>
+
+
+

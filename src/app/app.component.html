@@ -1,1 +1,23 @@
-<app-two-way-data-binding></app-two-way-data-binding>
+<!-- ROTAS -->
+
+<mat-toolbar class="header mat-elevation-z4" color="primary" *ngIf="mostrarMenu">
+  <mat-toolbar-row>
+    <!-- routerLink: link que redirecionar para uma rota -->
+    <!-- routerLinkActive: aplica css no link da rota quando esta ativa-->
+    <mat-button routerLink="/home" routerLinkActive="active">Home</mat-button>
+    <mat-button routerLink="/login" routerLinkActive="active">Login</mat-button>
+    <mat-button routerLink="/cursos" routerLinkActive="active" [queryParams]="{ pagina:1 }">Cursos</mat-button>
+    <!-- <mat-button [routerLink]="['curso', idCurso.value]" routerLinkActive="active">Curso com ID</mat-button> -->
+    <mat-button routerLink="/alunos" routerLinkActive="active">Alunos</mat-button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="container">
+  <!-- <p>Entre com o ID</p> -->
+  <!-- #: atribui a variavel a referência da tag-->
+  <!-- <input #idCurso> -->
+
+  <!-- Roteamento das rotas-->
+  <router-outlet></router-outlet>
+</div>
+
+<!-- FORMS -->

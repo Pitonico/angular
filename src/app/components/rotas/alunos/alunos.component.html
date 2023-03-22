@@ -1,0 +1,17 @@
+
+<mat-grid-list cols="2" rowHeight="3:1">
+  <mat-grid-tile>
+    <mat-list role="list">
+      <mat-list-item role="listitem"
+        *ngFor="let aluno of alunos"
+        [routerLink]="[aluno.id]"> <!-- como é um rota filha, não precisamos colocar '/alunos'-->
+        {{ aluno.nome }}
+      </mat-list-item>
+      <button mat-raised-button	color="primary" (click)="novoAluno()">Novo</button>
+    </mat-list>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <router-outlet></router-outlet>
+  </mat-grid-tile>
+</mat-grid-list>
+

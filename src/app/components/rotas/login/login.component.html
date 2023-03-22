@@ -1,0 +1,17 @@
+<div class="form">
+  <mat-form-field>
+    <mat-label>Usuário</mat-label>
+    <!-- NgModel: Ao digitar na tag HTML, o valor é atribuido ao atributo no TS -->
+    <!--          E o valor do TS é atribuido a propriedade value do HTML-->
+    <input matInput #tag [value]="usuario.nome" (input)="usuario.nome = tag.value">
+    <!-- <input matInput #tag (input)="usuario.nome = tag.value"> Nesse caso, nao precisa do two-way-->
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Entre com seu password</mat-label>
+    <input matInput [(ngModel)]="usuario.senha" [ngModelOptions]="{standalone: true}"  [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-flat-button color="primary" (click)="fazerLogin()"><mat-icon fontIcon="send"></mat-icon>Entrar</button>
+</div>

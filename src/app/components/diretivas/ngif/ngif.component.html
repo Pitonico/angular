@@ -1,0 +1,27 @@
+<h2>*ngIf</h2>
+<p><span style="color: red;">CUIDADO!</span> Quando o ngIf é verdadeiro, o elementro é instanciado e criado, e quando é falso,
+ ele é destruído, o que pode prejudicar a perfomace, pois esta alterando a árvore DOM, portanto ás vezes é melhor usar como
+alternativa a propriedade hidden do próprio elemento div.</p>
+<p>ngIf = para árvore de elementos grandes e priorizando segurança</p>
+<p>hidden = para árvore de elementos pequenos e não priorizando tanto segurança</p>
+
+<div *ngIf="cursos.length > 0"> Existe cursos</div>
+<div *ngIf="cursos.length == 0"> Não existem cursos</div>
+<div *ngIf="mostrarCursos"> Mostrar cursos </div>
+<div *ngIf="!mostrarCursos" >Não mostrar cursos </div>
+
+<div [hidden]="mostrarCursos"> Mostrar cursos </div>
+<div [hidden]="!mostrarCursos"> Não mostrar cursos </div>
+
+<h5>Removendo * e utilizando template</h5>
+<ng-template [ngIf]="mostrarCursos">
+  <div>Mostrar Cursos</div>
+</ng-template>
+
+<!-- <div template="ngIf mostrarCursos">
+  Mostrar Cursos
+</div> -->
+
+<button (click)="onMostrarCursos()"> Mostrar ou esconder cursos </button>
+
+

@@ -1,0 +1,20 @@
+<h3>Customizadas</h3>
+<p style="background-color: yellow;">Fundo Amarelo</p>
+<p [style.backgroundColor]="corAmarela">Fundo Amarelo</p>
+<p [ngStyle]="{ 'background-color': corAmarela}">Fundo Amarelo</p>
+<p fundoAmarelo>Fundo Amarelo</p>
+
+<button fundoAmarelo>Botão</button>
+
+<p highlightMouse>Texto com highlight quando passo o mouse</p>
+<!-- <p highlight [defaultColor]="'gray'" [highLightColor]="'red'">Texto com highlight com cores customizadas</p> -->
+<p [highlight]="'red'" [defaultColor]="'grey'">Texto com highlight com cores customizadas</p>
+
+<div *ngIf="mostrarCursos"> Mostrar cursos </div>
+
+<div *ngElse="mostrarCursos">Não mostrar cursos </div>
+<ng-template [ngElse]="mostrarCursos">
+  <div >Não existem Cursos</div>
+</ng-template>
+
+<button (click)="onMostrarCursos()"> Mostrar ou esconder cursos </button>

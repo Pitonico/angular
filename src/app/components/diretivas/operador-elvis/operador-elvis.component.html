@@ -1,0 +1,9 @@
+<h3>Operador Elvis ? </h3>
+<p><strong>Diferente de nulo, ou seja, não é nulo</strong>
+  <br>Para evitar errors de null, tornando seguro a navegação entre objetos</p>
+<p>FORMA LONGA: tarefa.responsavel != null ? tarefa.responsavel.nome : "" </p>
+<p>FORMA CURTA: tarefa.responsavel?.nome</p>
+<p> Descrição: {{ tarefa.desc }} </p>
+<!-- <p> Responsavel: {{ tarefa.responsavel.nome }} </p> -->
+<p> Responsável: {{ tarefa.responsavel != null ? tarefa.responsavel.nome : '' }} </p>
+<p> Responsável: {{ tarefa.responsavel?.nome }} </p>
